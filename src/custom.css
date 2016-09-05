@@ -1,0 +1,64 @@
+.logo{
+	font-size: x-large;
+}
+.studentsHeader{
+	display:inline-block;
+}
+.searchBox{
+	float: right;
+	width: 400px;
+	margin-top: 9px;
+}
+.studentCard{
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+.studentCardHead{
+	background-color: dodgerblue;
+    text-align: center;
+    font-size: medium;    
+}
+.studentCardIcon{
+    height: 70px;
+    width: 80px;
+    margin: 3px;
+}
+a.studentFullName{
+	color: white;
+	text-decoration: none;
+	font-size: 25px;
+}
+a{
+	cursor:pointer;
+}
+a.studentFullName:hover{
+	color: black;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.listStudentImage{
+	height: 30px;
+	width: 30px;
+}
+
+.studentCardDetails{
+	
+}
+.studentEdit{
+	margin-right: 600px;
+}
+.formElements{
+	margin-bottom: 15px;
+}
+
+.studentBooksHeading{
+    display: inline-block;
+    margin-left: 5px;
+}
+.glyphicon.glyphicon-book{
+	font-size: 20px;
+}
+.TableHeading{
+	background-color: #027FF4;
+	color: mintcream;
+}

@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="studentsLogo">
+    <header class="studentsHeader">
+      <h3><span class="glyphicon glyphicon-user"></span> Students</h3>
+    </header>
+      <span class="glyphicon glyphicon-plus"></span>
+  </div>
+  
+  <div class="row">
+    <nav class="navbar navbar-default navbar-static-top">    
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li ng-class="{'active': vm.view==vm.views.ICON}">
+              <a ng-click="vm.view=vm.views.ICON" ><span class="glyphicon glyphicon-th" aria-hidden="true"></span>Icon View</a>
+            </li>
+            <li ng-class="{active: vm.view==vm.views.LIST}">
+              <a ng-click="vm.view=vm.views.LIST" ><span class="glyphicon glyphicon-list" aria-hidden="true"></span>List View</a>
+            </li>
+          </ul>
+          <input type="text" class="form-control searchBox" ng-model="vm.searchText" ng-change="vm.applySearch()" placeholder="Search here...">
+        </div>
+    </nav>
+  </div>
+  
+  <div class="row" ng-show="vm.view==vm.views.ICON">
+    <div class="col-md-3" data-ng-repeat="student in vm.filteredStudents">
+      <div class="studentCard">
+        <div class="studentCardHead">
+          <a class="studentFullName" ui-sref="studentEdit({student:student,studentId:student.id})">{{student.firstName+' '+student.lastName}}</a>
+        </div>
+        <div class="studentCardBody">
+          <div class="row">
+            <div><img ng-show="student.gender==='male'"class="studentCardIcon col-md-4" src="male.png"          alt="logo"><img ng-if="student.gender==='female'"class="studentCardIcon col-md-4"         src="female.png" alt="logo">
+            </div>
+            <div class="studentCardDetails col-md-8">
+              <div>{{'Id: '+student.id}}</div>
+              <div>{{'Branch: '+student.branch}}</div>
+              <div>{{'Gender: '+student.gender}}</div>
+              <div> <a ui-sref="studentBooks({studentId:student.id})">{{'Books: '+student.booksCount}}</a></div>
+               <!-- <div>{{'Address: '+student.locality+', '+student.city}}</div>    -->
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" ng-show = "vm.view == vm.views.LIST">
+    <div class="col-md-12" >
+      
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr class="h4">
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Books Count</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr data-ng-repeat="student in vm.filteredStudents" >
+            <th scope="row"><a ui-sref="studentEdit(
+                                          {student:student,studentId:student.id})"><h4>{{student.firstName+' '+student.lastName}}</h4></th></a>
+            <td>{{student.branch}}</td>
+            <td>{{student.booksCount}}</td>
+            <td><img ng-show="student.gender==='male'"class="listStudentImage" src="male.png" alt="logo">
+                <img ng-show  ="student.gender==='female'"class="listStudentImage " src="female.png" alt="logo">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>  
+  </div>
+
+</div>
+
+

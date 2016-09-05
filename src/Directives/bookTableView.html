@@ -1,0 +1,36 @@
+<div class="container">
+<div class="row">
+  	<div class="col-md-12">
+      <h3>{{student.personalDetails.firstName+' '+student.personalDetails.lastName}}</h3>
+      <address>{{student.personalDetails.locality}},<br>
+        <strong>
+          {{student.personalDetails.city}}
+        </strong>  
+      </address> 
+    </div>
+</div>
+
+<div class="row" >
+  <div class="col-md-12" >      
+    <table class="table table-striped">
+      <thead>
+        <tr class="TableHeading">
+          <th>Book Name</th>
+          <th>Date of Issue</th>
+          <th>Date of Return</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr data-ng-repeat="book in student.booksData">
+            <th>{{book.bookName}}</th>
+            <td>{{book.issueDate}}</td>
+            <td ng-show="book.returnDate">{{book.returnDate}}</td>
+            <td ng-show="!book.returnDate">Not Returned</td>
+            <td >{{book.price}}</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>  
+</div>
+</div>

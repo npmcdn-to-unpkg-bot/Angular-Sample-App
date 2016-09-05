@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <title>Books Management System</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="assets/bootstrap-3.3.7-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="custom.css">
+
+</head>
+
+<body ng-app="myApp" ng-controller="IndexController as vm">
+
+  <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="logo" href="#/">
+                    <img src="people.png" alt="logo">
+                    <span>Students Books Management</span>
+          </a>
+         
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li ng-class="{'active': vm.view == vm.views.STUDENTS}" ><a ui-sref="students" ng-click="vm.view=vm.views.STUDENTS">Students</a></li>
+            <li ng-class="{'active': vm.view == vm.views.BOOKS}" ><a ng-click="vm.view=vm.views.BOOKS" ui-sref="books">Books</a></li>
+            <li><a href="#contact">About</a></li>
+            <li><a href="#contact">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div ui-view></div>
+  <!-- 3rd party libraries -->
+    <script src="assets/angular-1.5.8/angular.min.js"></script>
+    <script src="assets/angular-1.5.8/angular-uiRouter.min.js"></script>
+    <script src="app.js"></script>
+    <script src="myApp.routes.js"></script>
+    <script src="myApp.controllers.js"></script>
+    <script src="myApp.services.js"></script>
+    <script src="myApp.filters.js"></script>
+    <script src="Directives/myApp.directives.js"></script>
+
+</body>
+
+</html>

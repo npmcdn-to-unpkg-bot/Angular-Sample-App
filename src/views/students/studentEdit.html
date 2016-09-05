@@ -1,0 +1,157 @@
+<div class="container">
+  <header class="studentsHeader">
+    <h2><span class="glyphicon glyphicon-pencil"></span>Edit Student</h2>
+  </header>
+  
+  <form class="studentEdit form-horizontal" ng-submit="vm.submit(vm.student)">
+    <div class="row formElements">
+      <div class="col-md-12">
+        <h3>{{vm.student.firstName+' '+vm.student.lastName}}</h3> 
+      </div> 
+    </div>  
+  
+    <div class="row formElements">
+      <div class="col-md-3">
+        <label for="FirstName" class="control-label">First Name:</label>
+      </div>
+      
+      <div class="col-md-9">
+        <input type="text" class="form-control" placeholder="Your First Name" ng-model="vm.student.firstName">
+      </div>
+    </div>
+
+    <div class="row formElements">
+      <div class="col-md-3">
+        <label for="LastName" class="control-label">Last Name:</label>
+      </div>
+      
+      <div class="col-md-9">
+        <input type="text" class="form-control" placeholder="Your Last Name" ng-model="vm.student.lastName">
+      </div>
+    </div>
+
+    <div class="row formElements">
+      <div class="col-md-3">
+        <label for="Id" class="control-label">Id:</label>
+      </div>
+      
+      <div class="col-md-9">
+        <input type="number" class="form-control" placeholder="Your Id" ng-model="vm.student.id" disabled>
+      </div>
+    </div>
+
+    <div class="row formElements">
+      <div class="col-md-3">
+        <label for="Branch" class="control-label">Branch:</label>
+      </div>
+      
+      <div class="col-md-9">
+        <select ng-model="vm.student.branch" ng-options="x for x in vm.branchList" class="btn btn-default">
+        </select> 
+      </div>
+    </div>
+
+     <div class="row formElements">
+      <div class="col-md-3">
+        <label for="Gender" class="control-label">Gender:</label>
+      </div>
+      
+      <div class="col-md-9">
+        <label class="radio-inline">
+          <input type="radio" ng-model="vm.student.gender" name="inlineRadioOptions" id="inlineRadio1" value="male"> Male
+        </label>
+        <label class="radio-inline">
+          <input type="radio" ng-model="vm.student.gender" id="inlineRadio2" value="female"> Female
+        </label>
+      </div>
+    </div>
+
+    <div class="row formElements">
+      <div class="col-md-3">
+        <label for="Locality" class="control-label">Locality:</label>
+      </div>
+      
+      <div class="col-md-9">
+        <input type="text" ng-model="vm.student.locality" class="form-control" placeholder="Your Locality">
+      </div>
+    </div>
+
+    <div class="row formElements">
+      <div class="col-md-3">
+        <label for="City" class="control-label">City:</label>
+      </div>
+      
+      <div class="col-md-9">
+        <select ng-model="vm.student.city" ng-options="x for x in vm.cityList" class="btn btn-default">
+        </select> 
+      </div>
+    </div>
+
+     <div class="row formElements">
+       <div class="col-md-12">
+         <button type="submit" class="btn btn-success">Update</button>&nbsp;&nbsp;&nbsp;&nbsp;
+         <button  class="btn btn-danger" ng-click="vm.reset(vm.student)">Reset</button>       
+       </div>
+    
+  <!-- <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div> -->
+  </form>   
+  <!-- <div class="row">
+    <nav class="navbar navbar-default navbar-static-top">    
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>Icon View</a>
+            </li>
+            <li>
+              <a href="#"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>List View</a>
+            </li>
+          </ul>
+          <input type="text" class="form-control searchBox" ng-model="vm.searchText" ng-change="vm.applySearch()" placeholder="Search here...">
+        </div>
+    </nav>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3" data-ng-repeat="student in vm.filteredStudents">
+      <div class="studentCard">
+        <div class="studentCardHead">
+          <a class="studentFullName"ui-sref="studentEdit({studentId:student.id })">{{student.firstName+' '+student.lastName}}</a>
+        </div>
+        <div class="studentCardBody">
+          <div class="row">
+            <div><img class="studentCardIcon col-md-4" src="male.png" alt="logo">
+            </div>
+            <div class="studentCardDetails col-md-8">
+              <div>{{'Id: '+student.id}}</div>
+              <div>{{'Branch: '+student.branch}}</div>
+              <div>{{'Gender: '+student.gender}}</div>
+              <div>{{'Books: '+student.booksCount}}</div>
+               <!-- <div>{{'Address: '+student.locality+', '+student.city}}</div>    -->
+           <!--  </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div> 
+
+
